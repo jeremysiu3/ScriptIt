@@ -23,7 +23,7 @@ st.markdown("""
 st.title("ScriptIt!")
 st.info("This program is machine learning assisted and therefore will not be 100% accurate.")
 
-language = st.selectbox("Select Language", ["Bengali", "Cantonese", "Greek", "Hindi", "Japanese", "Javanese", "Korean", "Mandarin", "Russian", "Thai"])
+language = st.selectbox("Select Language", ["Bengali", "Greek", "Hindi", "Japanese", "Javanese", "Korean", "Mandarin", "Russian"])
 
 input = st.text_area("Enter text in Latin letters:", height=150)
 
