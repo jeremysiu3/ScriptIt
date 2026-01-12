@@ -7,7 +7,6 @@ def convert_text(text, mapping_dict):
 
     return text
 
-#ml for vowel length
 def convert_abugida(text, consonants, vowel_diacritics, independent_vowels, halant, add_final_halant):
     
     result = []

@@ -3,13 +3,13 @@ from korean_romanizer import Romanizer
 import json
 import re
 
-# Load Korean text
-file_path = "data/raw/korean_dataset.zst"  # Your filename
+# Load text
+file_path = "data/raw/korean_dataset.zst" 
 print("Loading Korean Wikipedia and extracting words...")
 
 import zstandard as zstd
 
-korean_words = set()  # Use set to avoid duplicates
+korean_words = set() # Use set to avoid duplicates
 line_count = 0
 max_lines = 50000
 
@@ -49,7 +49,7 @@ except FileNotFoundError:
 
 print(f"\n✓ Extracted {len(korean_words)} unique Korean words")
 
-# Now romanize each word
+# Romanize each word
 print("\nRomanizing words...")
 training_data = []
 
@@ -73,7 +73,7 @@ for i, korean_word in enumerate(korean_words):
 
 print(f"\n✓ Created {len(training_data)} word-level training pairs")
 
-# Show samples
+# Samples
 print("\nSample word pairs:")
 for i in range(min(10, len(training_data))):
     print(f"{training_data[i]['korean']:8} → {training_data[i]['label']:20} (input: {training_data[i]['input']})")
