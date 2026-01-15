@@ -1,6 +1,14 @@
-# transliteration
+# ScriptIt!
 
-This transliteration program allows users to convert Latin script using standard romanization to the language script of their choice (Bengali, Greek, Hindi, Japanese, Javanese, Korean, Mandarin, Russian).
+This is a transliteration program that allows users to convert Latin script using standard romanization to the language script of their choice (Bengali, Greek, Hindi, Javanese, Korean, Mandarin, Russian).
 
-In this project, this was my first time learning how to use Git, and I didn't start doing it until I was well into the project, so there are some missing files which I had permanently deleted before using Git.
+I did this project to step into the world of machine learning and AI, more specifically in NLP and neural networks. I learned a lot throughout this process, and I am eager to learn more about how ML models work. 
+
+The languages which use an ML model are Bengali, Hindi, Korean, and Mandarin. When converting these languages, I took a hybrid approach having a dictionary of common words/phrases for the language and having the model take care of words that aren't in that dictionary. 
+
+Bengali and Hindi used binary classification models so it was simple. What I was trying to solve here was learning the program learning the difference between a long vowel and a short vowel. For example, for Hindi, a user can type in "hindi" and the model will know to convert the second "i" to a long vowel, ensuring accurate transliteration.
+
+Korean and Mandarin used an LSTM-based seq2seq model. Korean follows an alphabet, but it still required the use of machine learning because of the ambiguity of a Latin letter and its corresponding Korean letter. For example, the interchangeable use of k and g which gives the Korean ㄱ, while k can also give ㅋ. The model learns which character should be the output based on context of the word. Mandarin is the most inaccurate by far just because of its complexity which has multiple characters for one romanization. For example, shi4 can be 是, 事, 市, 试, etc. The model learns which character to use based on the sentence context. 
+
+This was also my first time learning how to use Git, and I didn't start doing it until I was well into the project, so there are some missing files which I had permanently deleted before using Git.
 
