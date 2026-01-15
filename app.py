@@ -2,7 +2,7 @@ import streamlit as st
 from mappings.russian import LATIN_TO_CYRILLIC
 from mappings.greek import LATIN_TO_GREEK
 from mappings.javanese import JAVANESE_CONSONANTS, JAVANESE_VOWEL_DIACRITICS, JAVANESE_INDEPENDENT_VOWELS, JAVANESE_PANGKON
-from src.simple_converter import convert_text, convert_abugida
+from src.simple_converter import convert_text, convert_javanese
 
 st.markdown("""
     <style>
@@ -25,7 +25,10 @@ st.info("This program is machine learning assisted and therefore will not be 100
 
 language = st.selectbox("Select Language", ["Bengali", "Greek", "Hindi", "Japanese", "Javanese", "Korean", "Mandarin", "Russian"])
 
-input = st.text_area("Enter text in Latin letters:", height=150)
+if language == "Mandarin":
+    placeholder = "Use this format: ni3 hao3 (pinyin with tone numbers)"
+
+input = st.text_area("Enter text in Latin letters:", height=150, placeholder=placeholder)
 
 if input:
     if language == "Russian":
@@ -62,10 +65,14 @@ if input:
             output = output[:-1]
 
     elif language == "Javanese":
-        output = convert_abugida(input, JAVANESE_CONSONANTS, JAVANESE_VOWEL_DIACRITICS, JAVANESE_INDEPENDENT_VOWELS, JAVANESE_PANGKON, add_final_halant=False)
+        output = convert_javanese(input, JAVANESE_CONSONANTS, JAVANESE_VOWEL_DIACRITICS, JAVANESE_INDEPENDENT_VOWELS, JAVANESE_PANGKON)
     
     elif language == "Korean":
         from src.korean.korean_ml_converter import convert_korean_ml
         output = convert_korean_ml(input)   
+
+    elif language == "Mandarin":
+        from src.mandarin.mandarin_ml_converter import convert_mandarin
+        output = convert_mandarin(input)
 
     st.text_area("Converted text:", value=output, height=150, disabled=True)
