@@ -23,7 +23,7 @@ st.markdown("""
 st.title("ScriptIt!")
 st.info("This program is machine learning assisted and therefore will not be 100% accurate.")
 
-language = st.selectbox("Select Language", ["Bengali", "Greek", "Hindi", "Japanese", "Javanese", "Korean", "Mandarin", "Russian"])
+language = st.selectbox("Select Language", ["Bengali", "Greek", "Hindi", "Javanese", "Korean", "Mandarin", "Russian"])
 
 if language == "Mandarin":
     placeholder = "Use this format: ni3 hao3 (pinyin with tone numbers)"
