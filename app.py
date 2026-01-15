@@ -25,6 +25,7 @@ st.info("This program is machine learning assisted and therefore will not be 100
 
 language = st.selectbox("Select Language", ["Bengali", "Greek", "Hindi", "Javanese", "Korean", "Mandarin", "Russian"])
 
+placeholder = ""
 if language == "Mandarin":
     placeholder = "Use this format: ni3 hao3 (pinyin with tone numbers)"
 
