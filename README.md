@@ -20,6 +20,7 @@ I had a lot of trouble deploying this so I think it's better that you run it loc
 Make sure you have the following installed:
 - Python 3.13.9
 - Git
+- Git LFS
 
 ### Clone the repository
 ``` bash
