@@ -26,6 +26,12 @@ Make sure you have the following installed:
 git clone https://github.com/jeremysiu3/ScriptIt.git
 
 ```
+
+### Pull LFS files
+``` bash
+git lfs pull
+```
+
 ### Create venv
 macOS / Linux:
 
